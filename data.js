@@ -6960,12 +6960,13 @@ const quizData = [
 
 // 652-654: 唱歌 (chànggē - Sing a song)
 {
-    bn: "আমি গান গাইতে ভালোবাসি।",
-    en: "I love to sing.",
-    words: [
-        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
-        {h: "喜欢", p: "xǐhuan", m: "like", bm: "ভালোবাসি"},
-        {h: "唱歌", p: "chànggē", m: "sing", bm: "গান গাইতে"}
+    bn: "আমি গান গাইতে ভালোবাসি না",
+  en: "I do not love to sing.",
+  words: [
+    {h: "我", p: "wǒ", m: "I", bm: "আমি"},
+    {h: "不", p: "bù", m: "not", bm: "না"},
+    {h: "喜欢", p: "xǐhuan", m: "like", bm: "ভালোবাসি"},
+    {h: "唱歌", p: "chànggē", m: "sing", bm: "গান গাইতে"}
     ]
 },
 {

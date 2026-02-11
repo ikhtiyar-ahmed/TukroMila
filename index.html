@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1e293b">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TukroMila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --primary-btn: #BCFC9C;
+            --retry-btn: #FFFFA5;
+            --text-main: #334155;
+            --text-sub: #64748b;
+            --app-bg: #f0f4f8;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Outfit', 'Hind Siliguri', sans-serif;
+            background: var(--app-bg);
+            margin: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;
+        }
+
+       .header-logo-text { 
+    margin-bottom: 12px; 
+    text-align: center; 
+}
+
+.app-brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px; 
+    font-weight: 480; 
+    letter-spacing: -1.5px;
+    color: var(--text-main);
+    margin: 0;
+    display: block;
+}
+
+.header-logo-text p { 
+    font-size: 11px; 
+    color: var(--text-sub); 
+    margin: 0; 
+}
+        .app-card {
+            width: 92%; max-width: 350px; background: var(--card-bg); 
+            padding: 22px; border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); position: relative;
+        }
+
+        .dash { display: flex; justify-content: space-between; margin-bottom: 20px; background: #f8fafc; padding: 10px 15px; border-radius: 18px; }
+        .stat { display: flex; flex-direction: column; align-items: center; }
+        .stat-val { font-size: 13px; font-weight: 600; color: var(--text-main); }
+        .stat-label { font-size: 8px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } }
+        .shake { animation: shake 0.4s ease-in-out; }
+
+        .question-box { text-align: center; margin-bottom: 18px; }
+        .target-bn { font-size: 17px; font-weight: 500; color: var(--text-main); margin: 0; }
+        .target-en { font-size: 11px; color: var(--text-sub); margin-top: 3px; }
+
+        .answer-area { min-height: 65px; border-bottom: 1.5px solid #f1f5f9; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 8px; }
+        .pool-area { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+
+        .tile { 
+            background: white; border: 1px solid #e2e8f0; border-radius: 10px; 
+            padding: 6px 10px 7px 10px; cursor: pointer; box-shadow: 0 2px 0 #e2e8f0; 
+            transition: 0.1s; text-align: center; min-width: 45px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+
+        .tile.used { opacity: 0.1; pointer-events: none; }
+        .hz { font-size: 17px; font-weight: 500; color: var(--text-main); display: block; line-height: 1.1; }
+        .py { font-size: 9px; color: var(--text-sub); font-weight: 400; display: block; font-family: 'Outfit', sans-serif; line-height: 1; margin-top: 2px; }
+
+        #breakdown-box { display: none; padding: 12px; background: #f8fafc; border-radius: 15px; margin-bottom: 15px; }
+        .bd-row { display: flex; justify-content: space-between; font-size: 11px; font-weight: 500; padding: 6px 0; border-bottom: 1px dotted #e2e8f0; color: #475569; }
+        .bd-mean { color: var(--text-sub); font-weight: 400; font-size: 10.5px; }
+
+        .btn { width: 100%; padding: 13px; border: none; border-radius: 14px; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .btn-check { background: #334155; color: white; }
+        .btn-action { display: none; color: #1e293b; }
+
+        .footer { margin-top: 20px; text-align: center; font-size: 10px; color: var(--text-sub); }
+
+
+  .header-logo-text p a {
+    text-decoration: none !important; /* No Underline */
+    color: inherit;                   /* Normal Color */
+    transition: 0.3s;                 
+  }
+
+  .header-logo-text p a:hover {
+    color:   #0399fd !important;        /* Mouse */
+    text-decoration: none !important; 
+  }
+
+  .footer b a:hover {
+    color: #0399fd !important;
+  }
+
+    </style>
+</head>
+<body>
+
+<div class="header-logo-text">
+    <h1 class="app-brand-name">TukroMila</h1>
+    <p>By <a href="https://www.instagram.com/ikhstudio/" target="_blank">IkhStudio</a></p>
+</div>
+
+<div class="app-card" id="main-card">
+    <div class="dash">
+        <div class="stat"><span class="stat-val" id="streak">0</span><span class="stat-label">Streak</span></div>
+        <div class="stat"><span class="stat-val" id="xp">0</span><span class="stat-label">Total XP</span></div>
+        <div class="stat"><span class="stat-val" id="timer">00:00</span><span class="stat-label">Time Spent</span></div>
+    </div>
+
+    <div class="question-box">
+        <p class="target-bn" id="bn">লোড হচ্ছে...</p>
+        <p class="target-en" id="en">Loading...</p>
+    </div>
+
+    <div class="answer-area" id="answer-box"></div>
+    <div class="pool-area" id="pool-box"></div>
+
+    <div id="breakdown-box">
+        <div id="status-msg" style="font-weight: 600; margin-bottom: 5px; font-size: 13px;"></div>
+        <div id="bd-content"></div>
+    </div>
+
+    <button class="btn btn-check" id="check-btn" onclick="verify()">Verify Answer</button>
+    <button class="btn btn-action" id="action-btn"></button>
+</div>
+
+
+<div class="footer">Developed by <b><a href="https://www.facebook.com/ikhstudioo" target="_blank" style="text-decoration: none; color: inherit;">Ikhtiyar Ahmed</a></b></div>
+
+
+<script src="data.js"></script>
+
+<script>
+    const quiz = (typeof quizData !== 'undefined') ? quizData : [];
+    let idx = -1, selected = [], stats = { streak: 0, xp: 0, startTime: Date.now() };
+    let playedIndices = []; // Track 
+
+    setInterval(() => {
+        const diff = Math.floor((Date.now() - stats.startTime) / 1000);
+        const m = Math.floor(diff / 60).toString().padStart(2, '0');
+        const s = (diff % 60).toString().padStart(2, '0');
+        document.getElementById('timer').innerText = `${m}:${s}`;
+    }, 1000);
+
+    function pickUniqueRandomIdx() {
+        
+        if (playedIndices.length === quiz.length) {
+            playedIndices = [];
+        }
+
+        let newIdx;
+        do {
+            newIdx = Math.floor(Math.random() * quiz.length);
+        } while (playedIndices.includes(newIdx));
+        playedIndices.push(newIdx);
+        idx = newIdx;
+    }
+
+    function start() {
+        if(quiz.length === 0) return;
+        const q = quiz[idx];
+        
+        document.getElementById('bn').innerText = q.bn;
+        document.getElementById('en').innerText = q.en;
+        document.getElementById('answer-box').innerHTML = '';
+        document.getElementById('breakdown-box').style.display = 'none';
+        document.getElementById('check-btn').style.display = 'block';
+        document.getElementById('action-btn').style.display = 'none';
+        selected = [];
+
+        const pool = document.getElementById('pool-box');
+        pool.innerHTML = '';
+        const shuffledWords = [...q.words].sort(() => Math.random() - 0.5);
+        
+        shuffledWords.forEach(w => {
+            const t = document.createElement('div');
+            t.className = 'tile'; 
+            t.innerHTML = `<span class="hz">${w.h}</span><span class="py">${w.p}</span>`;
+            
+            t.onclick = () => {
+                if(t.classList.contains('used')) return;
+                selected.push(w);
+                t.classList.add('used');
+                
+                const c = document.createElement('div');
+                c.className = 'tile'; 
+                c.innerHTML = `<span class="hz">${w.h}</span><span class="py">${w.p}</span>`;
+                
+                c.onclick = () => { 
+                    t.classList.remove('used'); 
+                    c.remove(); 
+                    selected = selected.filter(x => x !== w); 
+                };
+                document.getElementById('answer-box').appendChild(c);
+            };
+            pool.appendChild(t);
+        });
+    }
+
+    function verify() {
+        if(selected.length === 0) return;
+        const q = quiz[idx];
+        const isCorrect = selected.map(x => x.h).join('') === q.words.map(x => x.h).join('');
+        const actionBtn = document.getElementById('action-btn');
+        const checkBtn = document.getElementById('check-btn');
+        const statusMsg = document.getElementById('status-msg');
+        
+        document.getElementById('breakdown-box').style.display = 'block';
+        checkBtn.style.display = 'none';
+        actionBtn.style.display = 'block';
+
+        const bd = document.getElementById('bd-content');
+        bd.innerHTML = '';
+        q.words.forEach(w => { 
+            bd.innerHTML += `
+                <div class="bd-row">
+                    <span>${w.h} (${w.p})</span> 
+                    <span class="bd-mean">${w.bm} (${w.m})</span>
+                </div>`; 
+        });
+
+        if(isCorrect) {
+            stats.streak++; stats.xp += 10;
+            statusMsg.innerText = "Correct!";
+            statusMsg.style.color = "#58cc02";
+            actionBtn.innerText = "Continue";
+            actionBtn.style.backgroundColor = "var(--primary-btn)";
+            actionBtn.onclick = loadNext;
+            confetti({ particleCount: 20, spread: 40, origin: { y: 0.8 } });
+        } else {
+            stats.streak = 0;
+            statusMsg.innerText = "Incorrect!";
+            statusMsg.style.color = "#ef4444";
+            actionBtn.innerText = "Try Again";
+            actionBtn.style.backgroundColor = "var(--retry-btn)";
+            actionBtn.onclick = retry;
+            document.getElementById('main-card').classList.add('shake');
+            setTimeout(() => document.getElementById('main-card').classList.remove('shake'), 400);
+        }
+        document.getElementById('streak').innerText = stats.streak;
+        document.getElementById('xp').innerText = stats.xp;
+    }
+
+    function retry() {
+        document.getElementById('answer-box').innerHTML = '';
+        selected = [];
+        document.querySelectorAll('.tile').forEach(t => t.classList.remove('used'));
+        document.getElementById('breakdown-box').style.display = 'none';
+        document.getElementById('action-btn').style.display = 'none';
+        document.getElementById('check-btn').style.display = 'block';
+    }
+
+    function loadNext() {
+        pickUniqueRandomIdx();
+        start();
+    }
+
+    window.onload = () => {
+        if(quiz.length > 0) {
+            pickUniqueRandomIdx();
+            start();
+        }
+    };
+</script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js');
+    });
+  }
+</script>
+
+          </body>
+ </html>

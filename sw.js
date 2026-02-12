@@ -5,6 +5,7 @@ const ASSETS = [
   './data.js',
   './manifest.json',
   './icon.png', // 
+  'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&display=swap',
   'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap',
   'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js'
 ];

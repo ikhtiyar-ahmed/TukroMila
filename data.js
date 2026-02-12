@@ -184,8 +184,8 @@ const quizData = [
     bn: "দয়া করে পানি দিন।", 
     en: "Please give me some water.", 
     words: [
-        {h: "请", p: "qǐng", m: "please", bm: "দয়া করে"}, 
-        {h: "喝", p: "hē", m: "drink", bm: "পান করা"}, 
+        {h: "请", p: "qǐng", m: "please", bm: "দয়া করে"}, 
+        {h: "给", p: "gěi", m: "give", bm: "দিন"}, 
         {h: "水", p: "shuǐ", m: "water", bm: "পানি"}
     ]
 },
@@ -208,7 +208,7 @@ const quizData = [
     en: "You can ask the teacher.", 
     words: [
         {h: "你", p: "nǐ", m: "you", bm: "আপনি/তুমি"}, 
-        {h: "可以", p: "kěyǐ", m: "can", bm: "পারি"}, 
+        {h: "可以", p: "kěyǐ", m: "can", bm: "পারেন"}, 
         {h: "问", p: "wèn", m: "ask", bm: "জিজ্ঞেস করা"}, 
         {h: "老师", p: "lǎoshī", m: "teacher", bm: "শিক্ষক"}
     ]
@@ -775,7 +775,7 @@ const quizData = [
     en: "Too much work, so I am busy.", 
     words: [
         {h: "工作", p: "gōngzuò", m: "work", bm: "কাজ"}, 
-        {h: "太", p: "tài", m: "too", bm: "খুব বেশি"}, 
+        {h: "太", p: "tài", m: "too", bm: "খুব"}, 
         {h: "多", p: "duō", m: "many", bm: "বেশি"}, 
         {h: "了", p: "le", m: "particle", bm: "(হয়ে গেছে)"}, 
         {h: "很", p: "hěn", m: "very", bm: "তাই"}, 
@@ -1026,8 +1026,6 @@ const quizData = [
     en: "I want to eat.", 
     words: [
         {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
-        {h: "很", p: "hěn", m: "very", bm: "খুব"}, 
-        {h: "饿", p: "è", m: "hungry", bm: "ক্ষুধার্ত"}, 
         {h: "想", p: "xiǎng", m: "want", bm: "চাই"}, 
         {h: "吃", p: "chī", m: "eat", bm: "খাওয়া"}
     ]
@@ -2158,7 +2156,7 @@ const quizData = [
         {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
         {h: "喜欢", p: "xǐhuan", m: "like", bm: "পছন্দ করি"}, 
         {h: "吃", p: "chī", m: "eat", bm: "খেতে"}, 
-        {h: "包子", p: "bāozi", m: "steamed stuffed bun", bm: "স্টিভড বান"}
+        {h: "包子", p: "bāozi", m: "steamed stuffed bun", bm: "স্টিমড বান"}
     ]
 },
 {
@@ -2166,7 +2164,7 @@ const quizData = [
     en: "This steamed stuffed bun is very tasty.", 
     words: [
         {h: "这个", p: "zhège", m: "this", bm: "এই"}, 
-        {h: "包子", p: "bāozi", m: "steamed stuffed bun", bm: "স্টিভড বানটি"}, 
+        {h: "包子", p: "bāozi", m: "steamed stuffed bun", bm: "স্টিমড বান টি"}, 
         {h: "很", p: "hěn", m: "very", bm: "খুব"}, 
         {h: "好吃", p: "hǎochī", m: "tasty", bm: "সুস্বাদু"}
     ]
@@ -2179,7 +2177,7 @@ const quizData = [
         {h: "人", p: "rén", m: "people", bm: "মানুষ"}, 
         {h: "早上", p: "zǎoshang", m: "morning", bm: "সকালে"}, 
         {h: "吃", p: "chī", m: "eat", bm: "খায়"}, 
-        {h: "包子", p: "bāozi", m: "steamed stuffed buns", bm: "স্টিভড বান"}
+        {h: "包子", p: "bāozi", m: "steamed stuffed buns", bm: "স্টিমড বান"}
     ]
 },
 
@@ -4024,12 +4022,13 @@ const quizData = [
     ]
 },
 {
-    bn: "আজ রাতে আমি সিনেমা দেখব।", 
-    en: "I will watch a movie tonight.", 
+    bn: "আজ রাতে আমি সিনেমা দেখব না।", 
+    en: "I will not watch a movie tonight.", 
     words: [
         {h: "今天", p: "jīntiān", m: "today", bm: "আজ"}, 
         {h: "晚上", p: "wǎnshang", m: "night", bm: "রাতে"}, 
-        {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
+        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
+        {h: "不", p: "bù", m: "not", bm: "না"},
         {h: "看", p: "kàn", m: "watch", bm: "দেখব"}, 
         {h: "电影", p: "diànyǐng", m: "movie", bm: "সিনেমা"}
     ]
@@ -4542,10 +4541,11 @@ const quizData = [
 
 // 433-435: 可乐 (kělè - Cola)
 {
-    bn: "আমি কোলা পান করতে পছন্দ করি।", 
-    en: "I like to drink cola.", 
+    bn: "আমি কোলা পান করতে পছন্দ করি না।", 
+    en: "I do not like to drink cola.", 
     words: [
-        {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
+        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
+        {h: "不", p: "bù", m: "not", bm: "পছন্দ করি না"},
         {h: "喜欢", p: "xǐhuan", m: "like", bm: "পছন্দ করি"}, 
         {h: "喝", p: "hē", m: "drink", bm: "পান করতে"}, 
         {h: "可乐", p: "kělè", m: "cola", bm: "কোলা"}
@@ -5528,9 +5528,9 @@ const quizData = [
     en: "When will you come back?",
     words: [
         {h: "什么", p: "shénme", m: "what", bm: "কখন"},
-        {h: "时候", p: "shíhou", m: "time", bm: "ফিরে"},
-        {h: "回", p: "huí", m: "return", bm: "আসবে"},
-        {h: "来", p: "lái", m: "come", bm: "।"}
+        {h: "时候", p: "shíhou", m: "time", bm: "সময়"},
+        {h: "回", p: "huí", m: "return", bm: "ফিরে"},
+        {h: "来", p: "lái", m: "come", bm: "আসা"}
     ]
 },
 {
@@ -5673,9 +5673,9 @@ const quizData = [
     en: "Did you hear that he is coming?", 
     words: [
         {h: "你", p: "nǐ", m: "you", bm: "আপনি"}, 
-        {h: "听说", p: "tīngshuō", m: "hear", bm: "শুনেছেন কি"}, 
-        {h: "他", p: "tā", m: "he", bm: "যে"}, 
-        {h: "来", p: "lái", m: "come", bm: "সে আসছে"}, 
+        {h: "听说", p: "tīngshuō", m: "hear/rumor", bm: "শুনেছেন কি"}, 
+        {h: "他", p: "tā", m: "he", bm: "সে"}, 
+        {h: "来", p: "lái", m: "come", bm: "আসছে"}, 
         {h: "吗", p: "ma", m: "marker", bm: "(প্রশ্ন)"}
     ]
 },
@@ -5691,10 +5691,11 @@ const quizData = [
     ]
 },
 {
-    bn: "আমি গান শুনতে পছন্দ করি।", 
-    en: "I like listening to music.", 
+    bn: "আমি গান শুনতে পছন্দ করি না।", 
+    en: "I do not like listening to music.", 
     words: [
-        {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
+        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
+        {h: "不", p: "bù", m: "not", bm: "না"},
         {h: "喜欢", p: "xǐhuan", m: "like", bm: "পছন্দ করি"}, 
         {h: "听", p: "tīng", m: "listen", bm: "শুনতে"}, 
         {h: "音乐", p: "yīnyuè", m: "music", bm: "গান"}
@@ -5749,8 +5750,8 @@ const quizData = [
     en: "She is a nice girl.", 
     words: [
         {h: "她", p: "tā", m: "she", bm: "সে"}, 
-        {h: "是", p: "shì", m: "is", bm: "একটি"}, 
-        {h: "个", p: "gè", m: "measure word", bm: "জন"}, 
+        {h: "是", p: "shì", m: "is", bm: "হয়"}, 
+        {h: "个", p: "gè", m: "measure word", bm: "টি/জন"}, 
         {h: "好", p: "hǎo", m: "nice", bm: "চমৎকার"}, 
         {h: "女生", p: "nǚshēng", m: "girl", bm: "মেয়ে"}
     ]
@@ -5783,8 +5784,8 @@ const quizData = [
     en: "He is a smart boy.", 
     words: [
         {h: "他", p: "tā", m: "he", bm: "সে"}, 
-        {h: "是", p: "shì", m: "is", bm: "একটি"}, 
-        {h: "个", p: "gè", m: "measure word", bm: "জন"}, 
+        {h: "是", p: "shì", m: "is", bm: "হয়"}, 
+        {h: "个", p: "gè", m: "measure word", bm: "টি/জন"}, 
         {h: "聪明", p: "cōngming", m: "smart", bm: "বুদ্ধিমান"}, 
         {h: "男生", p: "nánshēng", m: "boy", bm: "ছেলে"}
     ]
@@ -5984,10 +5985,10 @@ const quizData = [
     ]
 },
 {
-    bn: "সিনেমাটি খুব মজার।", 
-    en: "The movie is very interesting.", 
+    bn: "বইটি খুব মজার।", 
+    en: "The book is very interesting.", 
     words: [
-        {h: "电影", p: "diànyǐng", m: "movie", bm: "সিনেমাটি"}, 
+        {h: "书", p: "shū", m: "book", bm: "বইটি"},
         {h: "很", p: "hěn", m: "very", bm: "খুব"}, 
         {h: "有", p: "yǒu", m: "have", bm: "হয়"}, 
         {h: "意思", p: "yìsi", m: "interest", bm: "মজার"}
@@ -6281,7 +6282,7 @@ const quizData = [
     en: "Running is good for health.", 
     words: [
         {h: "跑步", p: "pǎobù", m: "running", bm: "দৌড়ানো"}, 
-        {h: "对", p: "duì", m: "for", bm: ""}, 
+        {h: "对", p: "duì", m: "for", bm: "জন্য"}, 
         {h: "身体", p: "shēntǐ", m: "body", bm: "স্বাস্থ্য"}, 
         {h: "好", p: "hǎo", m: "good", bm: "ভালো"}
     ]
@@ -6392,7 +6393,7 @@ const quizData = [
         {h: "得", p: "de", m: "particle", bm: ""}
     ]
 },
-
+ 
 // 601-603: 听力 (tīnglì - Listening Ability/Listening Test)
 {
     bn: "আমার শোনার ক্ষমতা ভালো।",
@@ -6509,7 +6510,7 @@ const quizData = [
     en: "Chinese is a beautiful language.",
     words: [
         {h: "中文", p: "zhōngwén", m: "Chinese", bm: "চীনা"},
-        {h: "是", p: "shì", m: "is", bm: "একটি"},
+        {h: "是", p: "shì", m: "is", bm: ""},
         {h: "美丽", p: "měilì", m: "beautiful", bm: "সুন্দর"},
         {h: "的", p: "de", m: "'s", bm: ""},
         {h: "语言", p: "yǔyán", m: "language", bm: "ভাষা"}
@@ -6520,7 +6521,7 @@ const quizData = [
     en: "Language is a means of human communication.",
     words: [
         {h: "语言", p: "yǔyán", m: "language", bm: "ভাষা"},
-        {h: "是", p: "shì", m: "is", bm: "।"},
+        {h: "是", p: "shì", m: "is", bm: ""},
         {h: "人类", p: "rénlèi", m: "human", bm: "মানুষের"},
         {h: "交流", p: "jiāoliú", m: "communication", bm: "যোগাযোগের"},
         {h: "工具", p: "gōngjù", m: "tool", bm: "মাধ্যম"}
@@ -6554,10 +6555,10 @@ const quizData = [
     words: [
         {h: "现在", p: "xiànzài", m: "now", bm: "বর্তমান"},
         {h: "情况", p: "qíngkuàng", m: "situation", bm: "পরিস্থিতি"},
-        {h: "在", p: "zài", m: "is", bm: ""},
-        {h: "经济", p: "jīngjì", m: "economy", bm: "অর্থনৈতিকভাবে"},
-        {h: "上", p: "shàng", m: "on", bm: ""},
-        {h: "很", p: "hěn", m: "very", bm: "।"},
+        {h: "在", p: "zài", m: "at/in", bm: ""},
+        {h: "经济", p: "jīngjì", m: "economy", bm: "অর্থনৈতিক"},
+        {h: "上", p: "shàng", m: "aspect/on", bm: "ভাবে"},
+        {h: "很", p: "hěn", m: "very", bm: "খুব"},
         {h: "困难", p: "kùnnan", m: "difficult", bm: "কঠিন"}
     ]
 },
@@ -6801,36 +6802,36 @@ const quizData = [
 
  // 637-639: 事儿 (shìr - Matter/Thing/Affair)
 {
-    bn: "আপনার কি কোনো কাজ আছে?",
-    en: "Do you have any matter?",
+    bn: "আমার একটি ছোট কাজ আছে।",
+    en: "I have a small matter.",
     words: [
-        {h: "你", p: "nǐ", m: "you", bm: "আপনার"},
-        {h: "有", p: "yǒu", m: "have", bm: "আছে কি"},
+        {h: "我", p: "wǒ", m: "I", bm: "আমার"},
+        {h: "有", p: "yǒu", m: "have", bm: "আছে"},
+        {h: "一点", p: "yìdiǎn", m: "a little", bm: "একটি ছোট"},
+        {h: "事儿", p: "shìr", m: "matter", bm: "কাজ"}
+    ]
+},
+{
+    bn: "আপনার কি আজ কোনো কাজ আছে?",
+    en: "Do you have any matter/work today?",
+    words: [
+        {h: "你", p: "nǐ", m: "you", bm: "আপনার"}, 
+        {h: "今天", p: "jīntiān", m: "today", bm: "আজ"}, 
+        {h: "有", p: "yǒu", m: "have", bm: "আছে কি"}, 
         {h: "事儿", p: "shìr", m: "matter", bm: "কোনো কাজ"}
     ]
 },
 {
-    bn: "আমি আজ ব্যস্ত, অনেক কাজ আছে।",
-    en: "I am busy today, I have many things to do.",
+    bn: "আমার কি এই বিষয়ে কিছু কথা আছে?",
+    en: "Do I have something to say about this matter?",
     words: [
-        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
-        {h: "今天", p: "jīntiān", m: "today", bm: "আজ"},
-        {h: "很", p: "hěn", m: "very", bm: ""},
-        {h: "忙", p: "máng", m: "busy", bm: "ব্যস্ত"},
-        {h: "有", p: "yǒu", m: "have", bm: "আছে"},
-        {h: "很多", p: "hěnduō", m: "many", bm: "অনেক"},
-        {h: "事儿", p: "shìr", m: "matter", bm: "কাজ"}
-    ]
-},
-{
-    bn: "এটি একটি ছোট কাজ।",
-    en: "This is a small matter.",
-    words: [
-        {h: "这", p: "zhè", m: "this", bm: "এটি"},
-        {h: "是", p: "shì", m: "is", bm: "একটি"},
-        {h: "件", p: "jiàn", m: "measure word", bm: ""},
-        {h: "小", p: "xiǎo", m: "small", bm: "ছোট"},
-        {h: "事儿", p: "shìr", m: "matter", bm: "কাজ"}
+        {h: "关于", p: "guānyú", m: "about", bm: "এই বিষয়ে"}, 
+        {h: "这", p: "zhè", m: "this", bm: ""}, 
+        {h: "事儿", p: "shìr", m: "matter", bm: "কাজ/বিষয়ে"}, 
+        {h: "我", p: "wǒ", m: "I", bm: "আমার"}, 
+        {h: "有", p: "yǒu", m: "have", bm: "আছে"}, 
+        {h: "话", p: "huà", m: "saying", bm: "কথা"}, 
+        {h: "吗", p: "ma", m: "question marker", bm: "কি"}
     ]
 },
 
@@ -7132,7 +7133,7 @@ const quizData = [
     en: "This is your birthday gift.", 
     words: [
         {h: "这", p: "zhè", m: "this", bm: "এটি"}, 
-        {h: "是", p: "shì", m: "is", bm: "।"}, 
+        {h: "是", p: "shì", m: "is", bm: ""}, 
         {h: "给", p: "gěi", m: "for", bm: ""}, 
         {h: "你", p: "nǐ", m: "your", bm: "তোমার"}, 
         {h: "的", p: "de", m: "possessive", bm: ""}, 
@@ -7189,7 +7190,7 @@ const quizData = [
     words: [
         {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
         {h: "坐", p: "zuò", m: "sit/take", bm: "নিচ্ছি"}, 
-        {h: "3", p: "sān", m: "3", bm: "৩"}, 
+        {h: "三", p: "sān", m: "3", bm: "৩"}, 
         {h: "号", p: "hào", m: "number", bm: "নম্বর"}, 
         {h: "公交车", p: "gōngjiāochē", m: "bus", bm: "বাসটি"}
     ]
@@ -7213,7 +7214,7 @@ const quizData = [
         {h: "我", p: "wǒ", m: "my", bm: "আমার"}, 
         {h: "的", p: "de", m: "'s", bm: ""}, 
         {h: "生日", p: "shēngrì", m: "birthday", bm: "জন্মদিন"}, 
-        {h: "在", p: "zài", m: "in", bm: "।"}, 
+        {h: "在", p: "zài", m: "in", bm: ""}, 
         {h: "五", p: "wǔ", m: "five", bm: "মে"}, 
         {h: "月", p: "yuè", m: "month", bm: "মাসে"}
     ]
@@ -7223,7 +7224,7 @@ const quizData = [
     en: "The moon is very beautiful in the sky tonight.", 
     words: [
         {h: "今天", p: "jīntiān", m: "today", bm: "আজ"}, 
-        {h: "晚上", p: "wǎnshang", m: "evening", bm: ""}, 
+        {h: "晚上", p: "wǎnshang", m: "evening/night", bm: "রাতে"},
         {h: "月亮", p: "yuèliang", m: "moon", bm: "চাঁদ"}, 
         {h: "很", p: "hěn", m: "very", bm: "খুব"}, 
         {h: "漂亮", p: "piàoliang", m: "beautiful", bm: "সুন্দর"}
@@ -7348,7 +7349,7 @@ const quizData = [
         {h: "这个", p: "zhège", m: "this", bm: "এই"}, 
         {h: "房间", p: "fángjiān", m: "room", bm: "ঘরটি"}, 
         {h: "多大", p: "duōdà", m: "how big", bm: "কত বড়"}, 
-        {h: "？", p: "?", m: "?", bm: ""}
+        {h: "？", p: "?", m: "?", bm: "?"}
     ]
 },
 {
@@ -7369,8 +7370,8 @@ const quizData = [
     en: "I was born in Bangladesh.", 
     words: [
         {h: "我", p: "wǒ", m: "I", bm: "আমি"}, 
-        {h: "在", p: "zài", m: "in", bm: "বাংলাদেশে"}, 
-        {h: "孟加拉国", p: "mèngjiālāguó", m: "Bangladesh", bm: ""}, 
+        {h: "在", p: "zài", m: "in", bm: ""}, 
+        {h: "孟加拉国", p: "mèngjiālāguó", m: "Bangladesh", bm: "বাংলাদেশে"}, 
         {h: "出生", p: "chūshēng", m: "born", bm: "জন্মগ্রহণ করেছি"}
     ]
 },
@@ -7596,15 +7597,15 @@ const quizData = [
     ]
 },
 {
-    bn: "এটি একটি আকর্ষণীয় বই।",
+    bn: "এটি একটি আকর্ষণীয় বইয়ের পরিচিতি।",
     en: "This is an interesting book introduction.",
     words: [
-        {h: "这个", p: "zhège", m: "this", bm: "এটি একটি"},
-        {h: "书", p: "shū", m: "book", bm: ""},
-        {h: "介绍", p: "jièshào", m: "introduce", bm: "আকর্ষণীয় বই"},
-        {h: "很", p: "hěn", m: "very", bm: ""},
+        {h: "这个", p: "zhège", m: "this", bm: "এটি"},
+        {h: "书", p: "shū", m: "book", bm: "বইয়ের"},
+        {h: "介绍", p: "jièshào", m: "introduce", bm: "পরিচিতি"},
+        {h: "很", p: "hěn", m: "very", bm: "খুব"},
         {h: "有", p: "yǒu", m: "have", bm: ""},
-        {h: "意思", p: "yìsi", m: "meaning", bm: ""}
+        {h: "意思", p: "yìsi", m: "meaning", bm: "আকর্ষণীয়"}
     ]
 },
 
@@ -7644,14 +7645,13 @@ const quizData = [
 
 // 715-717: 常常 (chángcháng - Often/Frequently)
 {
-    bn: "আমি প্রায়ই সিনেমা দেখতে যাই।",
-    en: "I often go to watch movies.",
+    bn: "আমি প্রায়ই বইমেলায় যাই।",
+    en: "I often go to the book fair.",
     words: [
         {h: "我", p: "wǒ", m: "I", bm: "আমি"},
         {h: "常常", p: "chángcháng", m: "often", bm: "প্রায়ই"},
         {h: "去", p: "qù", m: "go", bm: "যাই"},
-        {h: "看", p: "kàn", m: "watch", bm: "দেখতে"},
-        {h: "电影", p: "diànyǐng", m: "movie", bm: "সিনেমা"}
+        {h: "书展", p: "shūzhǎn", m: "book fair", bm: "বইমেলায়"}
     ]
 },
 {
@@ -7720,22 +7720,22 @@ const quizData = [
     ]
 },
 {
-    bn: "আমাকে একটি গান শেখান।",
-    en: "Teach me a song.",
+    bn: "আমাকে ইংরেজি শেখান।",
+    en: "Teach me English.",
     words: [
         {h: "教", p: "jiāo", m: "teach", bm: "শেখান"},
         {h: "我", p: "wǒ", m: "me", bm: "আমাকে"},
-        {h: "一首", p: "yìshǒu", m: "one (song)", bm: "একটি"},
-        {h: "歌", p: "gē", m: "song", bm: "গান"}
+        {h: "英语", p: "yīngyǔ", m: "English", bm: "ইংরেজি"}
     ]
 },
 {
-    bn: "তিনি শিক্ষক হিসেবে কাজ করেন।",
-    en: "He works as a teacher (lit. teaches books).",
+    bn: "তিনি আমাকে চাইনিজ ভাষা শেখান।",
+    en: "He teaches me Chinese.",
     words: [
         {h: "他", p: "tā", m: "he", bm: "তিনি"},
-        {h: "教", p: "jiāo", m: "teach", bm: "কাজ করেন"},
-        {h: "书", p: "shū", m: "book", bm: ""}
+        {h: "教", p: "jiāo", m: "teach", bm: "শেখানো"},
+        {h: "我", p: "wǒ", m: "me", bm: "আমাকে"},
+        {h: "中文", p: "zhōngwén", m: "Chinese", bm: "চীনা ভাষা"}
     ]
 },
 
@@ -7775,14 +7775,14 @@ const quizData = [
 
 // 727-729: 昨天 (zuótiān - Yesterday)
 {
-    bn: "গতকাল আমি সিনেমা দেখতে গিয়েছিলাম।",
-    en: "I went to see a movie yesterday.",
+   bn: "গতকাল আমি বইমেলায় গিয়েছিলাম।",
+    en: "I went to the book fair yesterday.",
     words: [
         {h: "昨天", p: "zuótiān", m: "yesterday", bm: "গতকাল"},
         {h: "我", p: "wǒ", m: "I", bm: "আমি"},
-        {h: "去", p: "qù", m: "go", bm: "গিয়েছিলাম"},
-        {h: "看", p: "kàn", m: "watch", bm: "সিনেমা দেখতে"},
-        {h: "电影", p: "diànyǐng", m: "movie", bm: ""}
+        {h: "去", p: "qù", m: "go", bm: "গিয়েছিলাম"},
+        {h: "看", p: "kàn", m: "watch", bm: "দেখতে"},
+        {h: "书展", p: "shūzhǎn", m: "book fair", bm: "বইমেলায়"}
     ]
 },
 {
@@ -7810,12 +7810,14 @@ const quizData = [
 
 // 730-732: 寿面 (shòumiàn - Birthday noodles)
 {
-    bn: "জন্মদিনে দীর্ঘায়ুর জন্য নুডলস খাওয়া হয়।",
-    en: "Eat birthday noodles for long life.",
+    bn: "আমি জন্মদিনে নুডলস খেতে পছন্দ করি।",
+    en: "I like to eat longevity noodles on my birthday.",
     words: [
         {h: "生日", p: "shēngrì", m: "birthday", bm: "জন্মদিনে"},
-        {h: "吃", p: "chī", m: "eat", bm: "খাওয়া হয়"},
-        {h: "寿面", p: "shòumiàn", m: "birthday noodles", bm: "দীর্ঘায়ুর জন্য নুডলস"}
+        {h: "我", p: "wǒ", m: "I", bm: "আমি"},
+        {h: "喜欢", p: "xǐhuān", m: "like", bm: "পছন্দ করি"},
+        {h: "吃", p: "chī", m: "eat", bm: "খেতে"},
+        {h: "寿面", p: "shòumiàn", m: "longevity noodles", bm: "নুডলস"}
     ]
 },
 {
@@ -7884,7 +7886,7 @@ const quizData = [
     en: "Are we friends?",
     words: [
         {h: "咱们", p: "zánmen", m: "we", bm: "আমরা"},
-        {h: "是", p: "shì", m: "are", bm: "কি"},
+        {h: "是", p: "shì", m: "are", bm: ""},
         {h: "朋友", p: "péngyou", m: "friends", bm: "বন্ধু?"}
     ]
 },
@@ -7899,33 +7901,6 @@ const quizData = [
     ]
 },
 
-// 739-741: 干杯 (gānbēi - Cheers/Toast)
-{
-    bn: "চলুন পান করি! (চিয়ার্স)",
-    en: "Cheers!",
-    words: [
-        {h: "干杯", p: "gānbēi", m: "cheers", bm: "চলুন পান করি!"}
-    ]
-},
-{
-    bn: "বন্ধুর জন্মদিনের জন্য চলুন পান করি।",
-    en: "Let's toast to a friend's birthday.",
-    words: [
-        {h: "为", p: "wèi", m: "for", bm: ""},
-        {h: "朋友", p: "péngyou", m: "friend", bm: "বন্ধুর"},
-        {h: "生日", p: "shēngrì", m: "birthday", bm: "জন্মদিনের জন্য"},
-        {h: "干杯", p: "gānbēi", m: "cheers", bm: "চলুন পান করি"}
-    ]
-},
-{
-    bn: "সবাই মিলে চলুন পান করি।",
-    en: "Let's all cheer together.",
-    words: [
-        {h: "大家", p: "dàjiā", m: "everyone", bm: "সবাই"},
-        {h: "一起", p: "yìqǐ", m: "together", bm: "মিলে"},
-        {h: "干杯", p: "gānbēi", m: "cheers", bm: "চলুন পান করি"}
-    ]
-},
 
 
 
